@@ -1,6 +1,6 @@
 {
   "name": "ufo-society1974-definition-types",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "dist/index.js",
   "license": "MIT",
   "description": "A type definition package for UFO-society1974 website.",

@@ -1,11 +1,9 @@
 type Album = {
   description: string;
-  imageFile: File;
+  imageFile: File | null;
   id: string;
   publishedDate: string;
-  songs: Song[] | [];
   title: string;
-  publishPlatform: PublishPlatform;
 };
 
 type File = {
@@ -23,11 +21,17 @@ type Song = {
   musicRights: string;
 };
 
-type PublishPlatform = {
-  AppleMusic: string;
-  Spotify: string;
-  iTunes: string;
-  Bandcamp: string;
+const MASTER = "master" as const;
+const EDITOR = "editor" as const;
+const WATCHER = "watcher" as const;
+
+type User = {
+  isSignedIn: boolean;
+  uid: string;
+  username: string;
+  role: typeof EDITOR | typeof MASTER | typeof WATCHER;
+  email: string;
+  isDeleted: boolean;
 };
 
-export { Album, File, Song, PublishPlatform };
+export { Album, User, Song };
