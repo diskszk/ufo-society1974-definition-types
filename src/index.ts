@@ -14,7 +14,7 @@ type File = {
 type Song = {
   id: string;
   lyric: string;
-  songFile: File;
+  songFile: File | null;
   story: string;
   title: string;
   wordsRights: string;
