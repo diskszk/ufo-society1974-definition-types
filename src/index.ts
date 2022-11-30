@@ -1,9 +1,14 @@
+import type { Timestamp } from "firebase/firestore";
+import "firebase/firestore";
+
 type Album = {
   description: string;
   imageFile: File | null;
   id: string;
   publishedDate: string;
   title: string;
+
+  createdAt?: Timestamp;
 };
 
 type File = {
@@ -19,6 +24,8 @@ type Song = {
   title: string;
   wordsRights: string;
   musicRights: string;
+
+  createdAt?: Timestamp;
 };
 
 const MASTER = "master" as const;
@@ -32,6 +39,8 @@ type User = {
   role: typeof EDITOR | typeof MASTER | typeof WATCHER;
   email: string;
   isDeleted: boolean;
+
+  createdAt?: Timestamp;
 };
 
 export { Album, User, Song };
